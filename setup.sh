@@ -11,7 +11,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/atien-ssi/autoscript/main/ipvps | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/atien-ssi/autoscript/master/ipvps | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permiso Aceptado...${NC}"
 else
@@ -24,13 +24,13 @@ mkdir /var/lib/premium-script;
 echo "Ingrese el nombre de host del subdominio VPS, si no está disponible, haga clic en Enter"
 read -p "Hostname / Domain: " host
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/ins-vt.sh && chmod +x ins-vt.sh && sed -i -e 's/\r$//' ins-vt.sh && screen -S v2ray ./ins-vt.sh
-wget https://raw.githubusercontent.com/atien-ssi/autoscript/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/ins-vt.sh && chmod +x ins-vt.sh && sed -i -e 's/\r$//' ins-vt.sh && screen -S v2ray ./ins-vt.sh
+wget https://raw.githubusercontent.com/atien-ssi/autoscript/master/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
